@@ -8,16 +8,26 @@ public class DialogueManager : MonoBehaviour
 	public Text nameText;
 	public Text dialogueText;
 
-	private Queue<string> sentences;
+    public GameObject contButton;
+    public GameObject answerButton;
+    public GameObject answerText;
+
+    // PUT IN OTHER SCRIPT, JUST HERE FOR TESTING PURPOSES //
+    public Transform location;
+    public Transform blips;
+
+    private Queue<string> sentences;
 
 	void Start()
 	{
+        contButton.SetActive(false);
 		sentences = new Queue<string> ();
 	}
 
 	public void StartDialogue(Dialogue dialogue)
 	{
 		Debug.Log ("Starting conversation with " + dialogue.name);
+
 		nameText.text = dialogue.name;
 		sentences.Clear ();
 
@@ -25,6 +35,10 @@ public class DialogueManager : MonoBehaviour
 		{
 			sentences.Enqueue (sentence);
 		}
+        contButton.SetActive(true);
+
+        answerButton.SetActive(false);
+        answerText.SetActive(false);
 
 		DisplayNextSentence ();
 	}
@@ -45,5 +59,12 @@ public class DialogueManager : MonoBehaviour
 	void EndDialogue()
 	{
 		Debug.Log ("End of conversation");
-	}
+        InstantiateBlip();
+        contButton.SetActive(false);
+    }
+
+    public void InstantiateBlip()
+    {
+        Instantiate(blips, location.position, Quaternion.identity);
+    }
 }
