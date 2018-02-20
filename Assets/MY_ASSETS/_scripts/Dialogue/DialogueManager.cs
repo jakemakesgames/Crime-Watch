@@ -12,6 +12,7 @@ public class DialogueManager : MonoBehaviour
     public GameObject answerButton;
     public GameObject answerText;
 
+    public GameObject audioWaves;
     // PUT IN OTHER SCRIPT, JUST HERE FOR TESTING PURPOSES //
     public Transform location;
     public Transform blips;
@@ -20,6 +21,7 @@ public class DialogueManager : MonoBehaviour
 
 	void Start()
 	{
+        audioWaves.SetActive(false);
         contButton.SetActive(false);
 		sentences = new Queue<string> ();
 	}
@@ -39,6 +41,7 @@ public class DialogueManager : MonoBehaviour
 
         answerButton.SetActive(false);
         answerText.SetActive(false);
+        audioWaves.SetActive(true);
 
 		DisplayNextSentence ();
 	}
