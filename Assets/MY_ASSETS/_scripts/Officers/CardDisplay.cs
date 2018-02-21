@@ -7,6 +7,8 @@ public class CardDisplay : MonoBehaviour
 {
 	public OfficerCard officerCard;
 	public PlayerStatsManager playerStatsManager;
+    public PlayerMovement playerMovement;
+    public Button btn;
 
 	// name and description text elements //
 	public Text nameText;
@@ -24,8 +26,10 @@ public class CardDisplay : MonoBehaviour
 	void Start () 
 	{
 		playerStatsManager = FindObjectOfType<PlayerStatsManager> ();
-		// all of the public variables are set when the game is start //
-		nameText.text = officerCard.name;
+
+        playerMovement = FindObjectOfType<PlayerMovement>();
+        // all of the public variables are set when the game is start //
+        nameText.text = officerCard.name;
 		descriptionText.text = officerCard.description;
 
 		displayImage.sprite = officerCard.image;
@@ -45,22 +49,35 @@ public class CardDisplay : MonoBehaviour
 		// Add selected officers to a list //
 	}
 
-	public void ConfirmDispatch()
-	{
-		// remove budget from all officer's in the list //
-		playerStatsManager.dailyBudget -= officerCard.moneyCost;
+    public void ConfirmDispatch()
+    {
+        // remove budget from all officer's in the list //
+        playerStatsManager.dailyBudget -= officerCard.moneyCost;
 
-		// put the below comments in another function //
-		// send gameObjects out here //
-		// instantiate officer & send them to the scenario//
+        if (playerStatsManager.dailyBudget >= 0)
+        {
+            playerStatsManager.xp += 10;
+            playerMovement.SpawnPolice();
+            Debug.Log(officerCard.name + " has been dispatched!");
+        }
+        
+        // put the below comments in another function //
+        // send gameObjects out here //
+        // instantiate officer & send them to the scenario//
 
-		// UPDDATE THE PLAYER'S CURRENT DAILY BUDGET //
-		if (playerStatsManager.dailyBudget <= 0) 
-		{
-			// Display a Message //
-			Debug.Log ("You don't have enough money!");
-			playerStatsManager.dailyBudget = 0;
-		}
-	}
+        // UPDDATE THE PLAYER'S CURRENT DAILY BUDGET //
+        if (playerStatsManager.dailyBudget <= 0)
+        {
+            // Display a Message //
+            Debug.Log("You don't have enough money!");
+            playerStatsManager.dailyBudget = 0;
+
+            
+        }
+
+        
+    }
+
+
 
 }

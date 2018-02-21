@@ -21,8 +21,9 @@ public class PlayerStatsManager : MonoBehaviour
     public string day;
     public Text dayText;
 
-	// Use this for initialization
-	void Start ()
+
+    // Use this for initialization
+    void Start ()
     {
         // Set the UI elements //
         arrestCountText.text = "Arrests: " + arrestCount.ToString();
@@ -42,8 +43,10 @@ public class PlayerStatsManager : MonoBehaviour
 
 		dayText.text = day.ToString();
 
-
+        if (xp == 100)
+        {
+            level = 2;
+        }
 	}
-
 
 }
