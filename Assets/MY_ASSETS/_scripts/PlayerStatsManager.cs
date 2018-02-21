@@ -33,5 +33,17 @@ public class PlayerStatsManager : MonoBehaviour
         dayText.text = day.ToString();
     }
 
+	void Update()
+	{
+		arrestCountText.text = "Arrests: " + arrestCount.ToString();
+		dailyBudgetText.text = "$" + dailyBudget.ToString();
+		levelText.text = "LVL: " + level.ToString();
+		xpText.text = "XP: " + xp.ToString();
+
+		dayText.text = day.ToString();
+
+
+	}
+
 
 }

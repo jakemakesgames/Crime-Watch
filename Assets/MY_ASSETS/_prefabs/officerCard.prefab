@@ -158,6 +158,7 @@ GameObject:
   - component: {fileID: 222688686328405258}
   - component: {fileID: 114369687105156910}
   - component: {fileID: 114591607529194914}
+  - component: {fileID: 114856686691264984}
   m_Layer: 5
   m_Name: officerCard
   m_TagString: Untagged
@@ -385,13 +386,13 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 9f047caf5347b7340baca54f9d24ff0d, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  officerCard: {fileID: 0}
-  nameText: {fileID: 0}
-  descriptionText: {fileID: 0}
-  displayImage: {fileID: 0}
-  costText: {fileID: 0}
-  levelText: {fileID: 0}
-  xpText: {fileID: 0}
+  officerCard: {fileID: 11400000, guid: 809e8fc68356a6d41be71ea6b483cd07, type: 2}
+  nameText: {fileID: 114016616485643592}
+  descriptionText: {fileID: 114755552912311318}
+  displayImage: {fileID: 114868728903543124}
+  costText: {fileID: 114027557211589290}
+  levelText: {fileID: 114995092342659362}
+  xpText: {fileID: 114541779065651634}
 --- !u!114 &114627481781711292
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -458,6 +459,58 @@ MonoBehaviour:
     m_VerticalOverflow: 0
     m_LineSpacing: 1
   m_Text: <i>Description Text</I>
+--- !u!114 &114856686691264984
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1876699519416082}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 1392445389, guid: f70555f144d8491a825f0804e09c671c, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_Navigation:
+    m_Mode: 3
+    m_SelectOnUp: {fileID: 0}
+    m_SelectOnDown: {fileID: 0}
+    m_SelectOnLeft: {fileID: 0}
+    m_SelectOnRight: {fileID: 0}
+  m_Transition: 1
+  m_Colors:
+    m_NormalColor: {r: 1, g: 1, b: 1, a: 1}
+    m_HighlightedColor: {r: 0.9607843, g: 0.9607843, b: 0.9607843, a: 1}
+    m_PressedColor: {r: 0.78431374, g: 0.78431374, b: 0.78431374, a: 1}
+    m_DisabledColor: {r: 0.78431374, g: 0.78431374, b: 0.78431374, a: 0.5019608}
+    m_ColorMultiplier: 1
+    m_FadeDuration: 0.1
+  m_SpriteState:
+    m_HighlightedSprite: {fileID: 0}
+    m_PressedSprite: {fileID: 0}
+    m_DisabledSprite: {fileID: 0}
+  m_AnimationTriggers:
+    m_NormalTrigger: Normal
+    m_HighlightedTrigger: Highlighted
+    m_PressedTrigger: Pressed
+    m_DisabledTrigger: Disabled
+  m_Interactable: 1
+  m_TargetGraphic: {fileID: 114369687105156910}
+  m_OnClick:
+    m_PersistentCalls:
+      m_Calls:
+      - m_Target: {fileID: 114591607529194914}
+        m_MethodName: GetStats
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
+    m_TypeName: UnityEngine.UI.Button+ButtonClickedEvent, UnityEngine.UI, Version=1.0.0.0,
+      Culture=neutral, PublicKeyToken=null
 --- !u!114 &114868728903543124
 MonoBehaviour:
   m_ObjectHideFlags: 1
