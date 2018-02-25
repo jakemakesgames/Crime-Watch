@@ -163,6 +163,9 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   target: {fileID: 0}
+  returnTarget: {fileID: 0}
+  successfulPanel: {fileID: 0}
+  playerStatsManager: {fileID: 0}
 --- !u!135 &135005383986614922
 SphereCollider:
   m_ObjectHideFlags: 1

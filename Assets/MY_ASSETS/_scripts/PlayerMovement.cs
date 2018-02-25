@@ -12,6 +12,8 @@ public class PlayerMovement : MonoBehaviour
     public locationSpawner lSpawner;
     public CardDisplay cardDisplay;
 
+    //public GameObject successfulPanel;
+
 
     // Use this for initialization
     void Start () 
@@ -20,6 +22,7 @@ public class PlayerMovement : MonoBehaviour
         playerStatsManager = FindObjectOfType<PlayerStatsManager>();
         cardDisplay = FindObjectOfType<CardDisplay>();
         //officerCard = FindObjectOfType<OfficerCard>();
+        //successfulPanel.SetActive(false);
     }
 	
 	// Update is called once per frame
@@ -36,4 +39,6 @@ public class PlayerMovement : MonoBehaviour
 	}
 
     
+
+
 }

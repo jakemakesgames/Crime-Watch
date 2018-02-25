@@ -45,8 +45,66 @@ public class PlayerStatsManager : MonoBehaviour
 
         if (xp == 100)
         {
-            level = 2;
+            level += 1;
+            levelText.text = "LVL: " + level.ToString();
+            xpText.text = "XP: " + xp.ToString();
         }
-	}
+
+        if (xp == 200)
+        {
+            level += 1;
+            levelText.text = "LVL: " + level.ToString();
+            xpText.text = "XP: " + xp.ToString();
+        }
+
+        if (xp == 400)
+        {
+            level += 1;
+            levelText.text = "LVL: " + level.ToString();
+            xpText.text = "XP: " + xp.ToString();
+        }
+
+        if (xp == 600)
+        {
+            level += 1;
+            levelText.text = "LVL: " + level.ToString();
+            xpText.text = "XP: " + xp.ToString();
+        }
+
+        if (xp == 1200)
+        {
+            level += 1;
+            levelText.text = "LVL: " + level.ToString();
+            xpText.text = "XP: " + xp.ToString();
+        }
+
+        if (xp == 2400)
+        {
+            level += 1;
+            levelText.text = "LVL: " + level.ToString();
+            xpText.text = "XP: " + xp.ToString();
+        }
+
+        if (xp == 4800)
+        {
+            level += 1;
+            levelText.text = "LVL: " + level.ToString();
+            xpText.text = "XP: " + xp.ToString();
+        }
+
+        if (xp == 9600)
+        {
+            level += 1;
+            levelText.text = "LVL: " + level.ToString();
+            xpText.text = "XP: " + xp.ToString();
+        }
+
+        if (xp == 19200)
+        {
+            level += 1;
+            levelText.text = "LVL: " + level.ToString();
+            xpText.text = "XP: " + xp.ToString();
+        }
+    }
 
 }
